@@ -1,0 +1,20 @@
+provider "aws" {
+   region     = "ap-south-1"
+   access_key = "AKIA5IA2ZUXLZKS2IW6X"
+   secret_key = "58zL6SgY1wtFbHF86voK4T/yIe1yfHe4KUi18redrfed"
+}
+
+resource "aws_instance" "ec2_example" {
+
+   ami           = "ami-0ca94423a4b0b78b2"
+   instance_type =  "t2.micro"
+
+   tags = {
+           Name = "Terraform EC2"
+   }
+}
+
+output "my_console_output" {
+   value = "public ip"
+   
+} 
